@@ -4,11 +4,28 @@ output: rmarkdown::github_document
 
 # seymour
 
+Tools to Work with the 'Feedly' 'API'
+
 ## Description
+
+'Feedly' is a news aggregator application for various web browsers and mobile devices running 'iOS' and 'Android', also available as a cloud-based service. It compiles news feeds from a variety of online sources for the user to customize and share with others. Methods are provided to retrieve information about and contents of 'Feedly' collections and streams.
 
 ## What's Inside The Tin
 
 The following functions are implemented:
+
+- `feedly_access_token`:	Retrieve the Feedly Developer Token
+- `feedly_connections`:	Retrieve Feedly Connections
+- `feedly_stream`:	Retrieve contents of a Feedly "stream"
+
+## Authentication (README)
+
+You need a developer token to access most of the API endpoints. You can do that via links provdied by (<https://developer.feedly.com/v3/auth/>). There are no plans to support OAuth or token refreshing unless there is sufficient demand via Git[la|hu]b issues & issue votes.
+
+### NOT ALL ENDPOINTS REQUIRE AUTHENTICATION
+
+If you pass in a Feedly-structured feed id to `feedly_stream()` you do **not**
+need to authenticate (i.e. you do not need a developer token) to retrieve the contents. You _do_ need to know the Feedly-structured feed id which is (generally) `feed/FEED_URL` (e.g. `feed/http://feeds.feedburner.com/RBloggers`).
 
 ## Installation
 
@@ -24,9 +41,24 @@ options(width=120)
 
 ```{r message=FALSE, warning=FALSE, error=FALSE}
 library(seymour)
+library(tidyverse) # mostly for printing
 
 # current verison
 packageVersion("seymour")
 
 ```
 
+### Basic Usage
+
+```{r cache=TRUE}
+coll <- feedly_connections()
+
+filter(coll, title == "R-bloggers") %>% 
+  glimpse()
+
+feedly_stream(
+  stream_id = "feed/http://feeds.feedburner.com/RBloggers",
+) -> items
+
+str(items, 2)
+```

@@ -1,6 +1,6 @@
 Package: seymour
 Type: Package
-Title: seymour title goes here otherwise CRAN checks fail
+Title: Tools to Work with the 'Feedly' 'API'
 Version: 0.1.0
 Date: 2018-12-28
 Authors@R: c(
@@ -8,7 +8,12 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-5670-2640"))
   )
 Maintainer: Bob Rudis <bob@rud.is>
-Description: A good description goes here otherwise CRAN checks fail.
+Description: 'Feedly' is a news aggregator application for various web browsers
+    and mobile devices running 'iOS' and 'Android', also available as a 
+    cloud-based service. It compiles news feeds from a variety of online 
+    sources for the user to customize and share with others. Methods are provided
+    to retrieve information about and contents of 'Feedly' collections and
+    streams.
 URL: https://gitlab.com/hrbrmstr/seymour
 BugReports: https://gitlab.com/hrbrmstr/seymour/issues
 Encoding: UTF-8
@@ -20,5 +25,6 @@ Depends:
     R (>= 3.2.0)
 Imports:
     httr,
-    jsonlite
+    jsonlite,
+    magrittr
 RoxygenNote: 6.1.1

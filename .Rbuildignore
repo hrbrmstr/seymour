@@ -11,3 +11,4 @@
 ^tmp$
 ^notes$
 ^\.gitlab-ci\.yml$
+^\.httr-oauth$
