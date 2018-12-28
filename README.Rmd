@@ -1,0 +1,32 @@
+---
+output: rmarkdown::github_document
+---
+
+# seymour
+
+## Description
+
+## What's Inside The Tin
+
+The following functions are implemented:
+
+## Installation
+
+```{r eval=FALSE}
+devtools::install_github("hrbrmstr/seymour")
+```
+
+```{r message=FALSE, warning=FALSE, error=FALSE, include=FALSE}
+options(width=120)
+```
+
+## Usage
+
+```{r message=FALSE, warning=FALSE, error=FALSE}
+library(seymour)
+
+# current verison
+packageVersion("seymour")
+
+```
+
