@@ -1,5 +1,13 @@
 #' Tools to Work with the 'Feedly' 'API'
 #'
+#' \if{html}{
+#' \figure{venus-fly-trap.jpg}{options: alt="Figure: venus-fly-trap.jpg"}
+#' }
+#'
+#' \if{latex}{
+#' \figure{venus-fly-trap.jpg}
+#' }
+#'
 #' 'Feedly' is a news aggregator application for various web browsers and
 #' mobile devices running 'iOS' and 'Android', also available as a cloud-based
 #' service. It compiles news feeds from a variety of online sources for the

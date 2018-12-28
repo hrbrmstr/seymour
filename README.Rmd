@@ -2,6 +2,8 @@
 output: rmarkdown::github_document
 ---
 
+![](man/figures/venus-fly-trap.jpg)
+
 # seymour
 
 Tools to Work with the 'Feedly' 'API'
@@ -62,3 +64,7 @@ feedly_stream(
 
 str(items, 2)
 ```
+
+### Image Credit
+<!-- HTML Credit Code for Can Stock Photo -->
+<a href="https://www.canstockphoto.com">(c) Can Stock Photo / lineartestpilot</a>

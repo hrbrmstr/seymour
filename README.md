@@ -1,4 +1,6 @@
 
+![](man/figures/venus-fly-trap.jpg)
+
 # seymour
 
 Tools to Work with the ‘Feedly’ ‘API’
@@ -137,3 +139,10 @@ str(items, 2)
     ##   ..$ webfeeds      :'data.frame':   1000 obs. of  1 variable:
     ##   ..$ recrawled     : num [1:1000] NA NA NA NA NA NA NA NA NA NA ...
     ##   ..$ updateCount   : int [1:1000] NA NA NA NA NA NA NA NA NA NA ...
+
+### Image Credit
+
+<!-- HTML Credit Code for Can Stock Photo -->
+
+<a href="https://www.canstockphoto.com">(c) Can Stock Photo /
+lineartestpilot</a>
