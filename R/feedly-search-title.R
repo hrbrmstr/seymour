@@ -10,12 +10,12 @@
 #'        `References`) to provide a hint to the search engine to return feeds
 #'        in that locale.
 #' @param feedly_token Your Feedly Developer Access Token (see [feedly_access_token()])
-#' @references (<https://developer.feedly.com/v3/search/>)
+#' @references (<https://developer.feedly.com/v3/search/>) & [Search Tutorial](https://feedly.uservoice.com/knowledgebase/articles/441699-power-search-tutorial)
 #' @return list similar to [feedly_stream()]
 #' @export
 #' @examples
-#' feedly_search("data science")
-feedly_search <- function(query, count=20L, locale=NULL, feedly_token = feedly_access_token()) {
+#' feedly_search_title("data science")
+feedly_search_title <- function(query, count=20L, locale=NULL, feedly_token = feedly_access_token()) {
 
   ct <- as.integer(count)
 
@@ -23,9 +23,11 @@ feedly_search <- function(query, count=20L, locale=NULL, feedly_token = feedly_a
 
   httr::GET(
     url = "https://cloud.feedly.com/v3/search/feeds",
-    httr::add_headers(
-      if (!is.null( feedly_token))`Authorization` = sprintf("OAuth %s", feedly_access_token())
-    ),
+    if (!is.null(feedly_token)) {
+      httr::add_headers(
+        `Authorization` = sprintf("OAuth %s", feedly_token)
+      )
+    },
     query = list(
       query = query,
       count = ct,
@@ -42,3 +44,5 @@ feedly_search <- function(query, count=20L, locale=NULL, feedly_token = feedly_a
   out
 
 }
+
+# @seealso feedly_search_contents

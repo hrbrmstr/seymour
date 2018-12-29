@@ -107,9 +107,11 @@ feedly_stream <- function(stream_id,
 
   httr::GET(
     url = "https://cloud.feedly.com/v3/streams/contents",
-    httr::add_headers(
-      if (!is.null( feedly_token))`Authorization` = sprintf("OAuth %s", feedly_access_token())
-    ),
+    if (!is.null(feedly_token)) {
+      httr::add_headers(
+        `Authorization` = sprintf("OAuth %s", feedly_token)
+      )
+    },
     query = list(
       streamId = stream_id,
       ranked = ranked,

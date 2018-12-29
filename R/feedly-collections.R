@@ -12,7 +12,7 @@ feedly_connections <- function(with_stats=FALSE,
   httr::GET(
     url = "https://cloud.feedly.com/v3/collections",
     httr::add_headers(
-      `Authorization` = sprintf("OAuth %s", feedly_access_token())
+      `Authorization` = sprintf("OAuth %s", feedly_token)
     ),
     query = list(
       withStats = if (with_stats) "true" else "false"

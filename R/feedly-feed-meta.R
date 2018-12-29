@@ -3,6 +3,7 @@
 #' @md
 #' @note This endpoint will do a real-time fetch of the feed if the submitted feed is not yet part of the feedly cloud.
 #' @param feed an RSS feed URL. `feed/` will be prepended if not present.
+#' @param feedly_token Your Feedly Developer Access Token (see [feedly_access_token()])
 #' @references (<https://developer.feedly.com/v3/feeds/>)
 #' @return data frame (tibble) with the following fields:
 #' - `id`:
@@ -28,14 +29,14 @@
 #' @export
 #' @examples
 #' feedly_feed_meta("https://feeds.feedburner.com/rweeklylive")
-feedly_feed_meta <- function(feed) {
+feedly_feed_meta <- function(feed, feedly_token = feedly_access_token()) {
 
   feed <- curl::curl_escape(sprintf("feed/%s", sub("^feed/", "", feed)))
 
   httr::GET(
     url = sprintf("https://cloud.feedly.com/v3/feeds/%s", feed),
     httr::add_headers(
-      `Authorization` = sprintf("OAuth %s", feedly_access_token())
+      `Authorization` = sprintf("OAuth %s", feedly_token)
     )
   ) -> res
 

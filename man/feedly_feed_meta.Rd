@@ -4,10 +4,12 @@
 \alias{feedly_feed_meta}
 \title{Retrieve Metadata for a Feed}
 \usage{
-feedly_feed_meta(feed)
+feedly_feed_meta(feed, feedly_token = feedly_access_token())
 }
 \arguments{
 \item{feed}{an RSS feed URL. \code{feed/} will be prepended if not present.}
+
+\item{feedly_token}{Your Feedly Developer Access Token (see \code{\link[=feedly_access_token]{feedly_access_token()}})}
 }
 \value{
 data frame (tibble) with the following fields:
