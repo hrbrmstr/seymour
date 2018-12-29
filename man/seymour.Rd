@@ -20,6 +20,13 @@ mobile devices running 'iOS' and 'Android', also available as a cloud-based
 service. It compiles news feeds from a variety of online sources for the
 user to customize and share with others. Methods are provided to retrieve
 information about and contents of 'Feedly' collections and streams.
+}
+\note{
+Neither \code{\link[=feedly_search]{feedly_search()}} nor \code{\link[=feedly_stream]{feedly_stream()}} require authentication
+(i.e. you do not need a developer token) to retrieve the contents of the
+API call. For \code{feedly_stream()} You \emph{do} need to know the
+Feedly-structured feed id which is (generally) \code{feed/FEED_URL}
+(e.g. \code{feed/http://feeds.feedburner.com/RBloggers}).
 \itemize{
 \item URL: \url{https://gitlab.com/hrbrmstr/seymour}
 \item BugReports: \url{https://gitlab.com/hrbrmstr/seymour/issues}

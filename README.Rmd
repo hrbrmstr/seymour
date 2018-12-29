@@ -18,6 +18,9 @@ The following functions are implemented:
 
 - `feedly_access_token`:	Retrieve the Feedly Developer Token
 - `feedly_connections`:	Retrieve Feedly Connections
+- `feedly_feed_meta`:	Retrieve Metadata for a Feed
+- `feedly_opml`:	Retrieve Your Feedly OPML File
+- `feedly_search`:	Find feeds based on title, url or '#topic'
 - `feedly_stream`:	Retrieve contents of a Feedly "stream"
 
 ## Authentication (README)
@@ -26,8 +29,7 @@ You need a developer token to access most of the API endpoints. You can do that 
 
 ### NOT ALL ENDPOINTS REQUIRE AUTHENTICATION
 
-If you pass in a Feedly-structured feed id to `feedly_stream()` you do **not**
-need to authenticate (i.e. you do not need a developer token) to retrieve the contents. You _do_ need to know the Feedly-structured feed id which is (generally) `feed/FEED_URL` (e.g. `feed/http://feeds.feedburner.com/RBloggers`).
+Neither `feedly_search()` nor `feedly_stream()` require authentication (i.e. you do not need a developer token) to retrieve the contents of the API call. For `feedly_stream()` You _do_ need to know the Feedly-structured feed id which is (generally) `feed/FEED_URL` (e.g. `feed/http://feeds.feedburner.com/RBloggers`).
 
 ## Installation
 
@@ -63,6 +65,14 @@ feedly_stream(
 ) -> items
 
 str(items, 2)
+
+feedly_feed_meta("https://feeds.feedburner.com/rweeklylive") %>% 
+  glimpse()
+
+feedly_opml()
+
+rst <- feedly_search("data science")
+glimpse(rst$results)
 ```
 
 ## Package Code Metrics
