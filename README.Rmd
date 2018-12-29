@@ -65,6 +65,12 @@ feedly_stream(
 str(items, 2)
 ```
 
-### Image Credit
+## Package Code Metrics
+
+```{r}
+cloc::cloc_pkg_md()
+```
+
+## Image Credit
 <!-- HTML Credit Code for Can Stock Photo -->
 <a href="https://www.canstockphoto.com">(c) Can Stock Photo / lineartestpilot</a>

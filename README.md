@@ -140,7 +140,18 @@ str(items, 2)
     ##   ..$ recrawled     : num [1:1000] NA NA NA NA NA NA NA NA NA NA ...
     ##   ..$ updateCount   : int [1:1000] NA NA NA NA NA NA NA NA NA NA ...
 
-### Image Credit
+## Package Code Metrics
+
+``` r
+cloc::cloc_pkg_md()
+```
+
+| Lang | \# Files |  (%) | LoC | (%) | Blank lines |  (%) | \# Lines |  (%) |
+| :--- | -------: | ---: | --: | --: | ----------: | ---: | -------: | ---: |
+| R    |        8 | 0.89 | 120 | 0.9 |          45 | 0.62 |      155 | 0.81 |
+| Rmd  |        1 | 0.11 |  13 | 0.1 |          27 | 0.38 |       36 | 0.19 |
+
+## Image Credit
 
 <!-- HTML Credit Code for Can Stock Photo -->
 
