@@ -12,3 +12,5 @@
 ^notes$
 ^\.gitlab-ci\.yml$
 ^\.httr-oauth$
+^sample-report\.jpg$
+^report-thumb\.png$

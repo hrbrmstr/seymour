@@ -142,14 +142,21 @@ feedly_stream <- function(stream_id,
       if ("actionTimestamp" %in% cn) res$items$actionTimestamp <- as.POSIXct(res$items$actionTimestamp/1000, origin = "1970-01-01")
 
       # column bind all the data frame columns so we can make res$items a tbl
+      # also prepend the old column name in front so we can ensure they won't
+      # be overwritten or have conflicts (e.g. 'summary' has a 'content' component)
 
       isdf <- sapply(res$items, class)
       df_cols <- names(isdf[isdf == "data.frame"])
 
       for (cname in df_cols) {
         cn <- cn[cn != cname]
-        res$items <- cbind.data.frame(res$items[,cn], res$items[,cname])
+        x <- res$items[[cname]]
+        colnames(x) <- sprintf("%s_%s", cname, colnames(x))
+        res$items <- cbind.data.frame(res$items[,cn], x)
+        cn <- c(cn, colnames(x))
       }
+
+      colnames(res$items) <- tolower(colnames(res$items))
 
       class(res$items) <- c("tbl_df", "tbl", "data.frame")
 

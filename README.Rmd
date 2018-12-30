@@ -20,7 +20,7 @@ Tools to Work with the 'Feedly' 'API'
 
 ## What's Inside The Tin
 
-The following functions are implemented:
+The following API functions are implemented:
 
 - `feedly_access_token`:	Retrieve the Feedly Developer Token
 - `feedly_collections`:	Retrieve Feedly Connections
@@ -31,6 +31,10 @@ The following functions are implemented:
 - `feedly_search_title`:	Find feeds based on title, url or '#topic'
 - `feedly_stream`:	Retrieve contents of a Feedly "stream"
 - `feedly_tags`:	Retrieve List of Tags
+
+The following helper functions are åvailable:
+
+- `render_stream`:  Render a Feedly Stream Data Frame to RMarkdown
 
 The following helper references are available:
 
@@ -119,6 +123,37 @@ glimpse(rsc$results)
 fp <- feedly_profile()
 fp[grepl("rate_limit", names(fp))]
 ```
+
+### Sample Stream Report
+
+```{r sample_stream_report, eval=FALSE}
+fp <- feedly_profile() # get profile to get my id
+
+# use the id to get my "security" category feed
+fs <- feedly_stream(sprintf("user/%s/category/security", fp$id))
+
+# get the top 10 items with engagement >= third quartile of all posts
+# and don't include duplicates in the report
+mutate(fs$items, published = as.Date(published)) %>% 
+  filter(published >= as.Date("2018-12-01")) %>%
+  filter(engagement > fivenum(engagement)[4]) %>% 
+  filter(!is.na(summary_content)) %>% 
+  mutate(alt_url = map_chr(alternate, ~.x[[1]])) %>% 
+  distinct(alt_url, .keep_all = TRUE) %>% 
+  slice(1:10) -> for_report
+
+# render the report
+render_stream(
+  feedly_stream = for_report, 
+  title = "Cybersecurity News", 
+  include_visual = TRUE,
+  browse = TRUE
+)
+```
+
+Click on the following to see the complete render:
+
+<center><a href="sample-report.jpg"><img src="report-thumb.png"/></a></center>
 
 ## Package Code Metrics
 

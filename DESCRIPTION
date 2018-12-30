@@ -20,7 +20,10 @@ Encoding: UTF-8
 License: AGPL
 Suggests:
     testthat,
-    covr
+    covr,
+    rmarkdown,
+    htmltools,
+    glue
 Depends:
     R (>= 3.2.0)
 Imports:

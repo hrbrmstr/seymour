@@ -16,7 +16,7 @@ collections and streams.
 
 ## What’s Inside The Tin
 
-The following functions are implemented:
+The following API functions are implemented:
 
   - `feedly_access_token`: Retrieve the Feedly Developer Token
   - `feedly_collections`: Retrieve Feedly Connections
@@ -27,6 +27,10 @@ The following functions are implemented:
   - `feedly_search_title`: Find feeds based on title, url or ‘\#topic’
   - `feedly_stream`: Retrieve contents of a Feedly “stream”
   - `feedly_tags`: Retrieve List of Tags
+
+The following helper functions are åvailable:
+
+  - `render_stream`: Render a Feedly Stream Data Frame to RMarkdown
 
 The following helper references are available:
 
@@ -277,16 +281,52 @@ fp[grepl("rate_limit", names(fp))]
     ## $x_rate_limit_reset
     ## [1] "38413"
 
+### Sample Stream Report
+
+``` r
+fp <- feedly_profile() # get profile to get my id
+
+# use the id to get my "security" category feed
+fs <- feedly_stream(sprintf("user/%s/category/security", fp$id))
+
+# get the top 10 items with engagement >= third quartile of all posts
+# and don't include duplicates in the report
+mutate(fs$items, published = as.Date(published)) %>% 
+  filter(published >= as.Date("2018-12-01")) %>%
+  filter(engagement > fivenum(engagement)[4]) %>% 
+  filter(!is.na(summary_content)) %>% 
+  mutate(alt_url = map_chr(alternate, ~.x[[1]])) %>% 
+  distinct(alt_url, .keep_all = TRUE) %>% 
+  slice(1:10) -> for_report
+
+# render the report
+render_stream(
+  feedly_stream = for_report, 
+  title = "Cybersecurity News", 
+  include_visual = TRUE,
+  browse = TRUE
+)
+```
+
+Click on the following to see the complete
+render:
+
+<center>
+
+<a href="sample-report.jpg"><img src="report-thumb.png"/></a>
+
+</center>
+
 ## Package Code Metrics
 
 ``` r
 cloc::cloc_pkg_md()
 ```
 
-| Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
-| :--- | -------: | ---: | --: | ---: | ----------: | ---: | -------: | ---: |
-| R    |       15 | 0.94 | 279 | 0.92 |         105 | 0.72 |      307 | 0.83 |
-| Rmd  |        1 | 0.06 |  25 | 0.08 |          41 | 0.28 |       65 | 0.17 |
+| Lang | \# Files |  (%) | LoC | (%) | Blank lines |  (%) | \# Lines |  (%) |
+| :--- | -------: | ---: | --: | --: | ----------: | ---: | -------: | ---: |
+| R    |       16 | 0.94 | 356 | 0.9 |         138 | 0.73 |      331 | 0.81 |
+| Rmd  |        1 | 0.06 |  40 | 0.1 |          50 | 0.27 |       76 | 0.19 |
 
 ## Image Credit
 
