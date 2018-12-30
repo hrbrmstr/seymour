@@ -308,8 +308,10 @@ render_stream(
 )
 ```
 
-Click on the following to see the complete
-render:
+Click on the following to see the complete render or view the
+[Rmd](https://rud.is/seymour/sample-report.Rmd) or
+[HTML](https://rud.is/seymour/sample-report.html) in your
+browser:
 
 <center>
 
