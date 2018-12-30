@@ -8,6 +8,7 @@
 ^\.codecov\.yml$
 ^README_files$
 ^doc$
+^docs$
 ^tmp$
 ^notes$
 ^\.gitlab-ci\.yml$
