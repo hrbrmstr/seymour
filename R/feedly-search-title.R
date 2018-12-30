@@ -41,6 +41,12 @@ feedly_search_title <- function(query, count=20L, locale=NULL, feedly_token = fe
 
   out <- jsonlite::fromJSON(out)
 
+  if (length(out$results) > 0) {
+    if (nrow(out$results) > 0) {
+      class(out$results) <- c("tbl_df", "tbl", "data.frame")
+    }
+  }
+
   out
 
 }

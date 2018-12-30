@@ -28,69 +28,73 @@ internally if this is the case)}
 \value{
 This endpoint returns a \code{list} with the following entries:
 \itemize{
-\item \code{id}:
-string the stream id, repeated.
-\item \code{updated}:
-Optional timestamp the timestamp, in ms, of the most recent entry for this stream (regardless of continuation, newerThan, etc).
-\item \code{continuation}:
-Optional string the continuation id to pass to the next stream call, for pagination. This id guarantees that no entry will be duplicated in a stream (meaning, there is no need to de-duplicate entries returned by this call). If this value is not returned, it means the end of the stream has been reached.
-\item \code{title}:
-Optional string for single feeds only, the feed title.
-\item \code{direction}:
-Optional string for single feeds only, the feed direction ("ltr" or "rtl").
-\item \code{alternate}:
-Optional link object for single feeds only, the feed website URL and type.
-\item \code{items}:
-entry array See the entries API for a description of the fields.
+\item \code{id}: string the stream id, repeated.
+\item \code{updated}: Optional timestamp the timestamp, in ms, of the most recent entry
+for this stream (regardless of continuation, newerThan, etc).
+\item \code{continuation}: Optional string the continuation id to pass to the next
+stream call, for pagination. This id guarantees that no entry will be
+duplicated in a stream (meaning, there is no need to de-duplicate entries
+returned by this call). If this value is not returned, it means the end of
+the stream has been reached.
+\item \code{title}: Optional string for single feeds only, the feed title.
+\item \code{direction}: Optional string for single feeds only, the feed direction ("ltr" or "rtl").
+\item \code{alternate}: Optional link object for single feeds only, the feed website URL and type.
+\item \code{items}: entry data frame (tibble); see below.
 }
 
-The \code{items} component is a data frame Entries roughly follow the
-Atom format. Here is a list of fields you can expect to receive:
+The \code{items} component is a data frame of "entries" that roughly follow the
+Atom format. Here is a list of fields you can expect to receive (NOTE!
+the number of fields returned is variable (said variable entries will have
+and \emph{"optional"} in the description below) so \emph{you} need to test for
+the presence of a column before using it in your code):
 \itemize{
-\item \code{id}:
-string the unique, immutable ID for this particular article.
-\item \code{title}:
-Optional string the article’s title. This string does not contain any HTML markup.
-\item \code{content}:
-Optional content object the article content. This object typically has two values: “content” for the content itself, and “direction” (“ltr” for left-to-right, “rtl” for right-to-left). The content itself contains sanitized HTML markup.
-\item \code{summary}:
-Optional content object the article summary. See the content object above.
-\item \code{author}:
-Optional string the author’s name
-\item \code{crawled}:
-timestamp the immutable timestamp, in ms, when this article was processed by the feedly Cloud servers.
-\item \code{recrawled}:
-Optional timestamp the timestamp, in ms, when this article was re-processed and updated by the feedly Cloud servers.
-\item \code{published}:
-timestamp the timestamp, in ms, when this article was published, as reported by the RSS feed (often inaccurate).
-\item \code{updated}:
-Optional timestamp the timestamp, in ms, when this article was updated, as reported by the RSS feed
-\item \code{alternate}:
-Optional link object array a list of alternate links for this article. Each link object contains a media type and a URL. Typically, a single object is present, with a link to the original web page.
-\item \code{origin}:
-Optional origin object the feed from which this article was crawled. If present, “streamId” will contain the feed id, “title” will contain the feed title, and “htmlUrl” will contain the feed’s website.
-\item \code{keywords}:
-Optional string array a list of keyword strings extracted from the RSS entry.
-\item \code{visual}:
-Optional visual object an image URL for this entry. If present, “url” will contain the image URL, “width” and “height” its dimension, and “contentType” its MIME type.
-\item \code{unread}:
-boolean was this entry read by the user? If an Authorization header is not provided, this will always return false. If an Authorization header is provided, it will reflect if the user has read this entry or not.
-\item \code{tags}:
-Optional tag object array a list of tag objects (“id” and “label”) that the user added to this entry. This value is only returned if an Authorization header is provided, and at least one tag has been added. If the entry has been explicitly marked as read (not the feed itself), the “global.read” tag will be present.
-\item \code{categories}:
-category object array a list of category objects (“id” and “label”) that the user associated with the feed of this entry. This value is only returned if an Authorization header is provided.
-\item \code{engagement}:
-Optional integer an indicator of how popular this entry is. The higher the number, the more readers have read, saved or shared this particular entry.
-\item \code{actionTimestamp}:
-Optional timestamp for tagged articles, contains the timestamp when the article was tagged by the user. This will only be returned when the entry is returned through the streams API.
-\item \code{enclosure}:
-Optional link object array a list of media links (videos, images, sound etc) provided by the feed. Some entries do not have a summary or content, only a collection of media links.
-\item \code{fingerprint}:
-string the article fingerprint. This value might change if the article is updated.
-\item \code{originId}:
-string the unique id of this post in the RSS feed (not necessarily a URL!)
-\item \code{sid}:
-Optional string an internal search id.
+\item \code{id}: string the unique, immutable ID for this particular article.
+\item \code{title}: Optional string the article’s title. This string does not contain any HTML markup.
+\item \code{content}: Optional content object the article content. This object typically
+has two values: “content” for the content itself, and “direction”
+(“ltr” for left-to-right, “rtl” for right-to-left). The content itself
+contains sanitized HTML markup.
+\item \code{summary}: Optional content object the article summary. See the content object above.
+\item \code{author}: Optional string the author’s name
+\item \code{crawled}: timestamp the immutable timestamp, in ms, when this article was
+processed by the feedly Cloud servers.
+\item \code{recrawled}: Optional timestamp the timestamp, in ms, when this article was
+re-processed and updated by the feedly Cloud servers.
+\item \code{published}: timestamp the timestamp, in ms, when this article was published,
+as reported by the RSS feed (often inaccurate).
+\item \code{updated}: Optional timestamp the timestamp, in ms, when this article was
+updated, as reported by the RSS feed
+\item \code{alternate}: Optional link object array a list of alternate links for this
+article. Each link object contains a media type and a URL. Typically, a
+single object is present, with a link to the original web page.
+\item \code{origin}: Optional origin object the feed from which this article was crawled.
+If present, “streamId” will contain the feed id, “title” will contain the
+feed title, and “htmlUrl” will contain the feed’s website.
+\item \code{keywords}: Optional string array a list of keyword strings extracted from the RSS entry.
+\item \code{visual}: Optional visual object an image URL for this entry. If present,
+“url” will contain the image URL, “width” and “height” its dimension, and
+“contentType” its MIME type.
+\item \code{unread}: boolean was this entry read by the user? If an Authorization header
+is not provided, this will always return false. If an Authorization header
+is provided, it will reflect if the user has read this entry or not.
+\item \code{tags}: Optional tag object array a list of tag objects (“id” and “label”)
+that the user added to this entry. This value is only returned if an Authorization header is provided, and at least one tag has been added. If the entry has been explicitly marked as read (not the feed itself), the “global.read” tag will be present.
+\item \code{categories}: category object array a list of category objects (“id” and
+“label”) that the user associated with the feed of this entry. This value
+is only returned if an Authorization header is provided.
+\item \code{engagement}: Optional integer an indicator of how popular this entry is.
+The higher the number, the more readers have read, saved or shared this
+particular entry.
+\item \code{actionTimestamp}: Optional timestamp for tagged articles, contains the
+timestamp when the article was tagged by the user. This will only be
+returned when the entry is returned through the streams API.
+\item \code{enclosure}: Optional link object array a list of media links (videos,
+images, sound etc) provided by the feed. Some entries do not have a summary
+or content, only a collection of media links.
+\item \code{fingerprint}: string the article fingerprint. This value might change if
+the article is updated.
+\item \code{originId}: string the unique id of this post in the RSS feed (not necessarily a URL!)
+\item \code{sid}: Optional string an internal search id.
 }
 }
 \description{

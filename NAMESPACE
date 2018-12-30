@@ -2,7 +2,7 @@
 
 export("%>%")
 export(feedly_access_token)
-export(feedly_connections)
+export(feedly_collections)
 export(feedly_feed_meta)
 export(feedly_opml)
 export(feedly_profile)

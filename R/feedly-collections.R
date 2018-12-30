@@ -6,7 +6,7 @@
 #' @references (<https://developer.feedly.com/v3/collections//>)
 #' @export
 #' @return a data frame of all non-empty collections
-feedly_connections <- function(with_stats=FALSE,
+feedly_collections <- function(with_stats=FALSE,
                                feedly_token = feedly_access_token()) {
 
   httr::GET(

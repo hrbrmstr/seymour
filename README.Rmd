@@ -1,6 +1,12 @@
 ---
 output: rmarkdown::github_document
+editor_options: 
+  chunk_output_type: console
 ---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message=FALSE, warning=FALSE)
+options(width=120)
+```
 
 ![](man/figures/venus-fly-trap.jpg)
 
@@ -17,7 +23,7 @@ Tools to Work with the 'Feedly' 'API'
 The following functions are implemented:
 
 - `feedly_access_token`:	Retrieve the Feedly Developer Token
-- `feedly_connections`:	Retrieve Feedly Connections
+- `feedly_collections`:	Retrieve Feedly Connections
 - `feedly_feed_meta`:	Retrieve Metadata for a Feed
 - `feedly_opml`:	Retrieve Your Feedly OPML File
 - `feedly_profile`:	Retrieve Your Feedly Profile
@@ -59,35 +65,64 @@ packageVersion("seymour")
 
 ```
 
-### Basic Usage
+### Collections
 
-```{r cache=TRUE}
-coll <- feedly_connections()
+```{r collections, cache=TRUE}
+coll <- feedly_collections()
 
 filter(coll, title == "R-bloggers") %>% 
   glimpse()
+```
 
+### Streams
+
+```{r streams, cache=TRUE}
 feedly_stream(
   stream_id = "feed/http://feeds.feedburner.com/RBloggers",
-) -> items
+) -> rbloggers
 
-str(items, 2)
+glimpse(rbloggers$items)
 
+rbloggers$items
+```
+
+### Feed Metadata
+
+```{r feed_metadata, cache=TRUE}
 feedly_feed_meta("https://feeds.feedburner.com/rweeklylive") %>% 
   glimpse()
+```
 
-feedly_opml()
+### OPML Retrieval
 
+```{r opml_retrieval, cache=TRUE}
+feedly_opml(as = "parsed")
+```
+
+### Title Search
+
+```{r title_search, cache=TRUE}
 rst <- feedly_search_title("data science")
 glimpse(rst$results)
+```
 
+### Contents Search
+
+```{r contents_search, cache=TRUE}
 rsc <- feedly_search_contents("data science")
 glimpse(rsc$results)
 ```
 
+### API Usage Rate Limit Info
+
+```{r rate_limit, cache=TRUE}
+fp <- feedly_profile()
+fp[grepl("rate_limit", names(fp))]
+```
+
 ## Package Code Metrics
 
-```{r}
+```{r pkg_metrics}
 cloc::cloc_pkg_md()
 ```
 

@@ -10,7 +10,8 @@ feedly_profile(feedly_token = feedly_access_token())
 \item{feedly_token}{Your Feedly Developer Access Token (see \code{\link[=feedly_access_token]{feedly_access_token()}})}
 }
 \description{
-Retrieve Your Feedly Profile
+This function also returns information about current API rate limits
+associated with your account.
 }
 \references{
 (\url{https://developer.feedly.com/v3/opml/})
