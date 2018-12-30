@@ -21,6 +21,7 @@ The following functions are implemented:
 - `feedly_feed_meta`:	Retrieve Metadata for a Feed
 - `feedly_opml`:	Retrieve Your Feedly OPML File
 - `feedly_profile`:	Retrieve Your Feedly Profile
+- `feedly_search_contents`:	Search content of a stream
 - `feedly_search_title`:	Find feeds based on title, url or '#topic'
 - `feedly_stream`:	Retrieve contents of a Feedly "stream"
 - `feedly_tags`:	Retrieve List of Tags
@@ -79,6 +80,9 @@ feedly_opml()
 
 rst <- feedly_search_title("data science")
 glimpse(rst$results)
+
+rsc <- feedly_search_contents("data science")
+glimpse(rsc$results)
 ```
 
 ## Package Code Metrics

@@ -131,6 +131,6 @@ feedly_stream <- function(stream_id,
 
 }
 
-#@param newer_than Return posts newer than this value. `POSIXct` timestamp or ISO string
-#       convertable to a `POSIXct` object. Default is `NULL` and specifying
-#       this value is optional (will be ignored if left `NULL`)
+# @param newer_than Return posts newer than this value. `POSIXct` timestamp or ISO string
+#        convertable to a `POSIXct` object. Default is `NULL` and specifying
+#        this value is optional (will be ignored if left `NULL`)
