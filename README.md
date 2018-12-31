@@ -30,7 +30,8 @@ The following API functions are implemented:
 
 The following helper functions are åvailable:
 
-  - `render_stream`: Render a Feedly Stream Data Frame to RMarkdown
+  - `feedly_continue`: Helper function to iterate through a `feedly_stream()` result set
+  - `render_stream`: Render a Feedly Stream Data Frame to R Markdown
 
 The following helper references are available:
 

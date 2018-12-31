@@ -3,6 +3,7 @@
 export("%>%")
 export(feedly_access_token)
 export(feedly_collections)
+export(feedly_continue)
 export(feedly_feed_meta)
 export(feedly_opml)
 export(feedly_profile)
