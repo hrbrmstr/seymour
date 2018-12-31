@@ -331,6 +331,10 @@ cloc::cloc_pkg_md()
 | R    |       16 | 0.94 | 356 | 0.9 |         138 | 0.73 |      331 | 0.81 |
 | Rmd  |        1 | 0.06 |  40 | 0.1 |          50 | 0.27 |       76 | 0.19 |
 
+## Code of Conduct
+ 
+Please note that the [34m'seymour'[39m project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+
 ## Image Credit
 
 <!-- HTML Credit Code for Can Stock Photo -->

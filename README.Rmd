@@ -162,6 +162,10 @@ Click on the following to see the complete render or view the [Rmd](https://rud.
 cloc::cloc_pkg_md()
 ```
 
+## Code of Conduct
+ 
+Please note that the [34m'seymour'[39m project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+
 ## Image Credit
 <!-- HTML Credit Code for Can Stock Photo -->
 <a href="https://www.canstockphoto.com">(c) Can Stock Photo / lineartestpilot</a>
