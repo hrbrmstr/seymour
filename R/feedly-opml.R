@@ -17,6 +17,7 @@ feedly_opml <- function(as = c("text", "parsed"), feedly_token = feedly_access_t
   as <- match.arg(as[1], c("text", "parsed"))
 
   httr::GET(
+    .seymour_ua,
     url = "https://cloud.feedly.com/v3/opml",
     httr::add_headers(
       `Authorization` = sprintf("OAuth %s", feedly_token)

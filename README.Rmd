@@ -24,12 +24,14 @@ The following API functions are implemented:
 
 - `feedly_access_token`:	Retrieve the Feedly Developer Token
 - `feedly_collections`:	Retrieve Feedly Connections
+- `feedly_categories`:  Show Feedly Categories
 - `feedly_feed_meta`:	Retrieve Metadata for a Feed
 - `feedly_opml`:	Retrieve Your Feedly OPML File
 - `feedly_profile`:	Retrieve Your Feedly Profile
 - `feedly_search_contents`:	Search content of a stream
 - `feedly_search_title`:	Find feeds based on title, url or '#topic'
 - `feedly_stream`:	Retrieve contents of a Feedly "stream"
+- `feedly_subscriptions`: Retrieve Feedly Subscriptions
 - `feedly_tags`:	Retrieve List of Tags
 
 The following helper functions are åvailable:
@@ -164,7 +166,7 @@ cloc::cloc_pkg_md()
 
 ## Code of Conduct
  
-Please note that the [34m'seymour'[39m project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+Please note that the [34m'seymour'[39m project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
 
 ## Image Credit
 <!-- HTML Credit Code for Can Stock Photo -->

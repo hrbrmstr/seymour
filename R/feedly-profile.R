@@ -10,6 +10,7 @@
 feedly_profile <- function(feedly_token = feedly_access_token()) {
 
   httr::GET(
+    .seymour_ua,
     url = "https://cloud.feedly.com/v3/profile",
     httr::add_headers(
       `Authorization` = sprintf("OAuth %s", feedly_token)

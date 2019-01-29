@@ -1,2 +1,7 @@
+0.2.0
+* Added package user agent to API calls
+* Added `feedly_categories()` utility function
+* Added `feedly_subscriptions()` to retrive list of subscriptions
+
 0.1.0 
 * Initial release

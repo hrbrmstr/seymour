@@ -35,6 +35,7 @@ feedly_feed_meta <- function(feed, feedly_token = feedly_access_token()) {
 
   httr::GET(
     url = sprintf("https://cloud.feedly.com/v3/feeds/%s", feed),
+    .seymour_ua,
     httr::add_headers(
       `Authorization` = sprintf("OAuth %s", feedly_token)
     )

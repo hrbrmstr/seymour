@@ -59,6 +59,7 @@ feedly_search_contents <- function(query,
 
   httr::GET(
     url = "https://cloud.feedly.com/v3/search/feeds",
+    .seymour_ua,
     if (!is.null(feedly_token)) {
       httr::add_headers(
         `Authorization` = sprintf("OAuth %s", feedly_token)

@@ -11,6 +11,7 @@ feedly_collections <- function(with_stats=FALSE,
 
   httr::GET(
     url = "https://cloud.feedly.com/v3/collections",
+    .seymour_ua,
     httr::add_headers(
       `Authorization` = sprintf("OAuth %s", feedly_token)
     ),

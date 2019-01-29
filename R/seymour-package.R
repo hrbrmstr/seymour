@@ -29,5 +29,7 @@
 #' @docType package
 #' @author Bob Rudis (bob@@rud.is)
 #' @import httr
+#' @importFrom xml2 read_html xml_find_first xml_find_all xml_text xml_attr
 #' @importFrom jsonlite fromJSON
+#' @importFrom utils packageVersion
 NULL

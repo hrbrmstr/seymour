@@ -20,17 +20,20 @@ The following API functions are implemented:
 
   - `feedly_access_token`: Retrieve the Feedly Developer Token
   - `feedly_collections`: Retrieve Feedly Connections
+  - `feedly_categories`: Show Feedly Categories
   - `feedly_feed_meta`: Retrieve Metadata for a Feed
   - `feedly_opml`: Retrieve Your Feedly OPML File
   - `feedly_profile`: Retrieve Your Feedly Profile
   - `feedly_search_contents`: Search content of a stream
   - `feedly_search_title`: Find feeds based on title, url or ‘\#topic’
   - `feedly_stream`: Retrieve contents of a Feedly “stream”
+  - `feedly_subscriptions`: Retrieve Feedly Subscriptions
   - `feedly_tags`: Retrieve List of Tags
 
 The following helper functions are åvailable:
 
-  - `feedly_continue`: Helper function to iterate through a `feedly_stream()` result set
+  - `feedly_continue`: Helper function to iterate through a
+    `feedly_stream()` result set
   - `render_stream`: Render a Feedly Stream Data Frame to R Markdown
 
 The following helper references are available:
@@ -68,7 +71,7 @@ library(tidyverse) # mostly for printing
 packageVersion("seymour")
 ```
 
-    ## [1] '0.1.0'
+    ## [1] '0.2.0'
 
 ### Collections
 
@@ -326,14 +329,16 @@ browser:
 cloc::cloc_pkg_md()
 ```
 
-| Lang | \# Files |  (%) | LoC | (%) | Blank lines |  (%) | \# Lines |  (%) |
-| :--- | -------: | ---: | --: | --: | ----------: | ---: | -------: | ---: |
-| R    |       16 | 0.94 | 356 | 0.9 |         138 | 0.73 |      331 | 0.81 |
-| Rmd  |        1 | 0.06 |  40 | 0.1 |          50 | 0.27 |       76 | 0.19 |
+| Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
+| :--- | -------: | ---: | --: | ---: | ----------: | ---: | -------: | ---: |
+| R    |       21 | 0.95 | 407 | 0.91 |         158 | 0.75 |      437 | 0.84 |
+| Rmd  |        1 | 0.05 |  40 | 0.09 |          52 | 0.25 |       81 | 0.16 |
 
 ## Code of Conduct
- 
-Please note that the [34m'seymour'[39m project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+
+Please note that the \[34m’seymour’\[39m project is released with a
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
+this project, you agree to abide by its terms.
 
 ## Image Credit
 
