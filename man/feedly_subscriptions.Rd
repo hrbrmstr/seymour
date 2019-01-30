@@ -10,7 +10,7 @@ feedly_subscriptions(feedly_token = feedly_access_token())
 \item{feedly_token}{Your Feedly Developer Access Token (see \code{\link[=feedly_access_token]{feedly_access_token()}})}
 }
 \value{
-a data frame of all non-empty collections
+a data frame of feed subscriptions
 }
 \description{
 This call \emph{requires} authentication.

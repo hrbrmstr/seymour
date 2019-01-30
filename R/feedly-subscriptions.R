@@ -21,22 +21,6 @@ feedly_subscriptions <- function(feedly_token = feedly_access_token()) {
 
   res <- httr::content(res, as="text")
   out <- jsonlite::fromJSON(res)
-#
-#   for (i in 1:length(coll$customizable)) {
-#
-#     if (nrow(coll$feeds[[i]]) > 0) {
-#       coll$feeds[[i]]$customizable <- coll$customizable[i]
-#       coll$feeds[[i]]$enterprise <- coll$enterprise[i]
-#       coll$feeds[[i]]$customizable <- coll$customizable[i]
-#       coll$feeds[[i]]$label <- coll$label[i]
-#       coll$feeds[[i]]$id <- coll$id[i]
-#       coll$feeds[[i]]$created <- coll$created[i]
-#       coll$feeds[[i]]$description <- coll$description[i]
-#     }
-#
-#   }
-#
-#   out <- bind_rows(coll$feeds[which(sapply(coll$feeds, nrow) > 0)])
 
   class(out) <- c("tbl_df", "tbl", "data.frame")
 

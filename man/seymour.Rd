@@ -35,3 +35,4 @@ Feedly-structured feed id which is (generally) \code{feed/FEED_URL}
 \author{
 Bob Rudis (bob@rud.is)
 }
+\keyword{internal}

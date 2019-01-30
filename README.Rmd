@@ -31,6 +31,7 @@ The following API functions are implemented:
 - `feedly_search_contents`:	Search content of a stream
 - `feedly_search_title`:	Find feeds based on title, url or '#topic'
 - `feedly_stream`:	Retrieve contents of a Feedly "stream"
+- `feedly_subscribe`:	Subscribe to an RSS feed
 - `feedly_subscriptions`: Retrieve Feedly Subscriptions
 - `feedly_tags`:	Retrieve List of Tags
 

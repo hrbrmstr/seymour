@@ -27,6 +27,7 @@ The following API functions are implemented:
   - `feedly_search_contents`: Search content of a stream
   - `feedly_search_title`: Find feeds based on title, url or ‘\#topic’
   - `feedly_stream`: Retrieve contents of a Feedly “stream”
+  - `feedly_subscribe`: Subscribe to an RSS feed
   - `feedly_subscriptions`: Retrieve Feedly Subscriptions
   - `feedly_tags`: Retrieve List of Tags
 
@@ -331,8 +332,8 @@ cloc::cloc_pkg_md()
 
 | Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
 | :--- | -------: | ---: | --: | ---: | ----------: | ---: | -------: | ---: |
-| R    |       21 | 0.95 | 407 | 0.91 |         158 | 0.75 |      437 | 0.84 |
-| Rmd  |        1 | 0.05 |  40 | 0.09 |          52 | 0.25 |       81 | 0.16 |
+| R    |       22 | 0.96 | 447 | 0.92 |         172 | 0.77 |      389 | 0.83 |
+| Rmd  |        1 | 0.04 |  40 | 0.08 |          52 | 0.23 |       82 | 0.17 |
 
 ## Code of Conduct
 

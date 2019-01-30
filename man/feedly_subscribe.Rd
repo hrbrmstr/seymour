@@ -4,7 +4,7 @@
 \alias{feedly_subscribe}
 \title{Subscribe to an RSS feed}
 \usage{
-feedly_subscribe(feed_url, categories = NULL,
+feedly_subscribe(feed_url, categories = NULL, title = NULL,
   feedly_token = feedly_access_token())
 }
 \arguments{
@@ -14,13 +14,21 @@ feedly_subscribe(feed_url, categories = NULL,
 Otherwise pass in a character vector of valid category names (use the
 utility function \code{\link[=feedly_categories]{feedly_categories()}} to get a list of category names)}
 
+\item{title}{if \code{NULL} the title will be intuited from the contents of \code{feed_url}}
+
 \item{feedly_token}{Your Feedly Developer Access Token (see \code{\link[=feedly_access_token]{feedly_access_token()}})}
+}
+\value{
+a data frame (invisibly) with metadata about the subcription
 }
 \description{
 Authorization is \emph{required} for this API call.
 }
 \examples{
+\dontrun{
 feedly_subscribe("https://journal.r-project.org/rss.atom")
+feedly_subscribe("http://gh-feed.imsun.net/hrbrmstr/sergeant/issues", "git issues")
+}
 }
 \references{
 (\url{https://developer.feedly.com/v3/subscriptions/#subscribe-to-a-feed/})
