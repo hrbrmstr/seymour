@@ -15,6 +15,7 @@
 #' @examples \dontrun{
 #' feedly_subscribe("https://journal.r-project.org/rss.atom")
 #' feedly_subscribe("http://gh-feed.imsun.net/hrbrmstr/sergeant/issues", "git issues")
+#' feedly_subscribe("https://rsshub.app/github/issue/hrbrmstr/sergeant", "git issues")
 #' }
 feedly_subscribe <- function(feed_url, categories = NULL, title = NULL, feedly_token = feedly_access_token()) {
 
