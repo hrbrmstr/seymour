@@ -4,8 +4,13 @@
 \alias{render_stream}
 \title{Render a Feedly Stream Data Frame to RMarkdown}
 \usage{
-render_stream(feedly_stream, title = "Feedly Stream Summary",
-  include_visual = FALSE, browse = FALSE, quiet = TRUE)
+render_stream(
+  feedly_stream,
+  title = "Feedly Stream Summary",
+  include_visual = FALSE,
+  browse = FALSE,
+  quiet = TRUE
+)
 }
 \arguments{
 \item{feedly_stream}{output from \code{\link[=feedly_stream]{feedly_stream()}}. Ideally, you'll filter

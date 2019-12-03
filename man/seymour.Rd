@@ -3,7 +3,6 @@
 \docType{package}
 \name{seymour}
 \alias{seymour}
-\alias{seymour-package}
 \title{Tools to Work with the 'Feedly' 'API'}
 \description{
 \if{html}{
@@ -26,7 +25,7 @@ Neither \code{\link[=feedly_search]{feedly_search()}} nor \code{\link[=feedly_st
 (i.e. you do not need a developer token) to retrieve the contents of the
 API call. For \code{feedly_stream()} You \emph{do} need to know the
 Feedly-structured feed id which is (generally) \code{feed/FEED_URL}
-(e.g. \code{feed/http://feeds.feedburner.com/RBloggers}).
+(e.g. \verb{feed/http://feeds.feedburner.com/RBloggers}).
 \itemize{
 \item URL: \url{https://gitlab.com/hrbrmstr/seymour}
 \item BugReports: \url{https://gitlab.com/hrbrmstr/seymour/issues}

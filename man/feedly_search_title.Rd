@@ -2,13 +2,17 @@
 % Please edit documentation in R/feedly-search-title.R
 \name{feedly_search_title}
 \alias{feedly_search_title}
-\title{Find feeds based on title, url or \code{#topic}}
+\title{Find feeds based on title, url or \verb{#topic}}
 \usage{
-feedly_search_title(query, count = 20L, locale = NULL,
-  feedly_token = feedly_access_token())
+feedly_search_title(
+  query,
+  count = 20L,
+  locale = NULL,
+  feedly_token = feedly_access_token()
+)
 }
 \arguments{
-\item{query}{a full or partial title string, URL, or \code{#topic}}
+\item{query}{a full or partial title string, URL, or \verb{#topic}}
 
 \item{count}{number of items to return (API default is 20)}
 

@@ -4,8 +4,7 @@
 \alias{feedly_opml}
 \title{Retrieve Your Feedly OPML File}
 \usage{
-feedly_opml(as = c("text", "parsed"),
-  feedly_token = feedly_access_token())
+feedly_opml(as = c("text", "parsed"), feedly_token = feedly_access_token())
 }
 \arguments{
 \item{as}{one of "\code{text}" (plain character XML) or "\code{parsed}" (which will return

@@ -7,7 +7,7 @@
 feedly_feed_meta(feed, feedly_token = feedly_access_token())
 }
 \arguments{
-\item{feed}{an RSS feed URL. \code{feed/} will be prepended if not present.}
+\item{feed}{an RSS feed URL. \verb{feed/} will be prepended if not present.}
 
 \item{feedly_token}{Your Feedly Developer Access Token (see \code{\link[=feedly_access_token]{feedly_access_token()}})}
 }

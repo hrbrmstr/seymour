@@ -4,8 +4,7 @@
 \alias{feedly_collections}
 \title{Retrieve Feedly Connections}
 \usage{
-feedly_collections(with_stats = FALSE,
-  feedly_token = feedly_access_token())
+feedly_collections(with_stats = FALSE, feedly_token = feedly_access_token())
 }
 \arguments{
 \item{with_stats}{if \code{TRUE}, return reading and tag stats for the past 31 days (default: \code{FALSE})}

@@ -21,9 +21,11 @@ The following API functions are implemented:
   - `feedly_access_token`: Retrieve the Feedly Developer Token
   - `feedly_collections`: Retrieve Feedly Connections
   - `feedly_categories`: Show Feedly Categories
+  - `feedly_enterprise_profile`: Retrieve Your Feedly Enterprise Profile
   - `feedly_feed_meta`: Retrieve Metadata for a Feed
   - `feedly_opml`: Retrieve Your Feedly OPML File
   - `feedly_profile`: Retrieve Your Feedly Profile
+  - `feedly_refresh_token`: Generate a Feedly Refresh Token
   - `feedly_search_contents`: Search content of a stream
   - `feedly_search_title`: Find feeds based on title, url or ‘\#topic’
   - `feedly_stream`: Retrieve contents of a Feedly “stream”
@@ -31,7 +33,7 @@ The following API functions are implemented:
   - `feedly_subscriptions`: Retrieve Feedly Subscriptions
   - `feedly_tags`: Retrieve List of Tags
 
-The following helper functions are åvailable:
+The following helper functions are available:
 
   - `feedly_continue`: Helper function to iterate through a
     `feedly_stream()` result set
@@ -53,8 +55,8 @@ sufficient demand via Git\[la|hu\]b issues & issue votes.
 Neither `feedly_search_title()` nor `feedly_stream()` require
 authentication (i.e. you do not need a developer token) to retrieve the
 contents of the API call. For `feedly_stream()` You *do* need to know
-the Feedly-structured feed id which is (generally) `feed/FEED_URL` (e.g.
-`feed/http://feeds.feedburner.com/RBloggers`).
+the Feedly-structured feed id which is (generally) `feed/FEED_URL`
+(e.g. `feed/http://feeds.feedburner.com/RBloggers`).
 
 ## Installation
 
@@ -72,7 +74,7 @@ library(tidyverse) # mostly for printing
 packageVersion("seymour")
 ```
 
-    ## [1] '0.2.0'
+    ## [1] '0.2.5'
 
 ### Collections
 
@@ -315,8 +317,7 @@ render_stream(
 
 Click on the following to see the complete render or view the
 [Rmd](https://rud.is/seymour/sample-report.Rmd) or
-[HTML](https://rud.is/seymour/sample-report.html) in your
-browser:
+[HTML](https://rud.is/seymour/sample-report.html) in your browser:
 
 <center>
 
@@ -332,8 +333,8 @@ cloc::cloc_pkg_md()
 
 | Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
 | :--- | -------: | ---: | --: | ---: | ----------: | ---: | -------: | ---: |
-| R    |       22 | 0.96 | 447 | 0.92 |         172 | 0.77 |      389 | 0.83 |
-| Rmd  |        1 | 0.04 |  40 | 0.08 |          52 | 0.23 |       82 | 0.17 |
+| R    |       24 | 0.96 | 488 | 0.92 |         184 | 0.78 |      404 | 0.83 |
+| Rmd  |        1 | 0.04 |  40 | 0.08 |          52 | 0.22 |       84 | 0.17 |
 
 ## Code of Conduct
 

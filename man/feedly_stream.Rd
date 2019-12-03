@@ -4,9 +4,14 @@
 \alias{feedly_stream}
 \title{Retrieve contents of a Feedly "stream"}
 \usage{
-feedly_stream(stream_id, ranked = c("newest", "oldest"),
-  unread_only = FALSE, count = 1000L, continuation = NULL,
-  feedly_token = feedly_access_token())
+feedly_stream(
+  stream_id,
+  ranked = c("newest", "oldest"),
+  unread_only = FALSE,
+  count = 1000L,
+  continuation = NULL,
+  feedly_token = feedly_access_token()
+)
 }
 \arguments{
 \item{stream_id}{the id of the stream}

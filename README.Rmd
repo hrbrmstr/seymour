@@ -25,9 +25,11 @@ The following API functions are implemented:
 - `feedly_access_token`:	Retrieve the Feedly Developer Token
 - `feedly_collections`:	Retrieve Feedly Connections
 - `feedly_categories`:  Show Feedly Categories
+- `feedly_enterprise_profile`:	Retrieve Your Feedly Enterprise Profile
 - `feedly_feed_meta`:	Retrieve Metadata for a Feed
 - `feedly_opml`:	Retrieve Your Feedly OPML File
 - `feedly_profile`:	Retrieve Your Feedly Profile
+- `feedly_refresh_token`:	Generate a Feedly Refresh Token
 - `feedly_search_contents`:	Search content of a stream
 - `feedly_search_title`:	Find feeds based on title, url or '#topic'
 - `feedly_stream`:	Retrieve contents of a Feedly "stream"
@@ -35,7 +37,7 @@ The following API functions are implemented:
 - `feedly_subscriptions`: Retrieve Feedly Subscriptions
 - `feedly_tags`:	Retrieve List of Tags
 
-The following helper functions are åvailable:
+The following helper functions are available:
 
 - `feedly_continue`: Helper function to iterate through a `feedly_stream()` result set
 - `render_stream`:  Render a Feedly Stream Data Frame to R Markdown

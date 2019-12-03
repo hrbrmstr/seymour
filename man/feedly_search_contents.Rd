@@ -4,12 +4,19 @@
 \alias{feedly_search_contents}
 \title{Search content of a stream}
 \usage{
-feedly_search_contents(query, stream_id = NULL, fields = "all",
-  embedded = NULL, engagement = NULL, count = 20L, locale = NULL,
-  feedly_token = feedly_access_token())
+feedly_search_contents(
+  query,
+  stream_id = NULL,
+  fields = "all",
+  embedded = NULL,
+  engagement = NULL,
+  count = 20L,
+  locale = NULL,
+  feedly_token = feedly_access_token()
+)
 }
 \arguments{
-\item{query}{a full or partial title string, URL, or \code{#topic}}
+\item{query}{a full or partial title string, URL, or \verb{#topic}}
 
 \item{stream_id}{the id of the stream; a feed id, category id, tag id or a
 system collection/category ids can be used as
