@@ -21,6 +21,7 @@ The following API functions are implemented:
   - `feedly_access_token`: Retrieve the Feedly Developer Token
   - `feedly_collections`: Retrieve Feedly Connections
   - `feedly_categories`: Show Feedly Categories
+  - `feedly_entry`: Get a single entry by id
   - `feedly_enterprise_profile`: Retrieve Your Feedly Enterprise Profile
   - `feedly_feed_meta`: Retrieve Metadata for a Feed
   - `feedly_opml`: Retrieve Your Feedly OPML File
@@ -74,7 +75,7 @@ library(tidyverse) # mostly for printing
 packageVersion("seymour")
 ```
 
-    ## [1] '0.2.5'
+    ## [1] '0.3.0'
 
 ### Collections
 
@@ -333,8 +334,8 @@ cloc::cloc_pkg_md()
 
 | Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
 | :--- | -------: | ---: | --: | ---: | ----------: | ---: | -------: | ---: |
-| R    |       24 | 0.96 | 488 | 0.92 |         184 | 0.78 |      404 | 0.83 |
-| Rmd  |        1 | 0.04 |  40 | 0.08 |          52 | 0.22 |       84 | 0.17 |
+| R    |       25 | 0.96 | 512 | 0.93 |         195 | 0.79 |      413 | 0.83 |
+| Rmd  |        1 | 0.04 |  40 | 0.07 |          52 | 0.21 |       85 | 0.17 |
 
 ## Code of Conduct
 

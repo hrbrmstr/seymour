@@ -1,8 +1,8 @@
 Package: seymour
 Type: Package
 Title: Tools to Work with the 'Feedly' 'API'
-Version: 0.2.5
-Date: 2019-12-03
+Version: 0.3.0
+Date: 2020-01-22
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"), 
            comment = c(ORCID = "0000-0001-5670-2640"))
@@ -32,4 +32,4 @@ Imports:
     utils,
     jsonlite,
     magrittr
-RoxygenNote: 7.0.1
+RoxygenNote: 7.0.2

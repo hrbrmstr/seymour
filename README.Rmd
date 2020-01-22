@@ -25,6 +25,7 @@ The following API functions are implemented:
 - `feedly_access_token`:	Retrieve the Feedly Developer Token
 - `feedly_collections`:	Retrieve Feedly Connections
 - `feedly_categories`:  Show Feedly Categories
+- `feedly_entry`:  Get a single entry by id
 - `feedly_enterprise_profile`:	Retrieve Your Feedly Enterprise Profile
 - `feedly_feed_meta`:	Retrieve Metadata for a Feed
 - `feedly_opml`:	Retrieve Your Feedly OPML File

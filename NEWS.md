@@ -1,3 +1,6 @@
+0.3.0
+* Added `feedly_entry()`
+
 0.2.0
 * Added package user agent to API calls
 * Added `feedly_categories()` utility function
